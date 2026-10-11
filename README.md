@@ -126,3 +126,7 @@ https://registry.modelcontextprotocol.io/v0/servers?search=ai.bankrolled
 
 - Agent docs (llms.txt): https://bankrolled.ai/llms.txt
 - Magazine (canonical): https://bankrolled.com
+
+## Licence
+
+Documentation © CLYFAR LTD (Bankrolled), licensed under CC BY 4.0. The hosted service at bankrolled.ai is not covered by this licence.
