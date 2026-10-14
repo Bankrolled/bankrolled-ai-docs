@@ -1,13 +1,23 @@
-# Bankrolled.ai Agent Hub: docs
+# Bankrolled MCP: free deposit-insurance & savings limits for AI agents
 
-**Bankrolled.ai** is the agent hub for [Bankrolled](https://bankrolled.com). It serves **free**, agent-callable lookups of money facts and deposit-insurance schemes for English-speaking jurisdictions (US, UK, CA, AU, NZ). You can call it over plain REST or as a remote **MCP** server.
+Free remote MCP server and REST API for official, dated personal-finance limits in the US, UK, Canada, Australia and New Zealand: **FDIC, FSCS, CDIC, AU FCS, NZ DCS, UK ISA, 401k, Roth IRA, TFSA**. Every answer includes the regulator's URL and an `as_of` date. No API key, payment or sign-up.
 
-- **Canonical magazine: [bankrolled.com](https://bankrolled.com)**. The long-form guides live there. This hub does not republish article bodies.
-- **Lookups are free.** No payment, API key or sign-up.
-- **Sourced only.** Every answer carries the official regulator or government source and an `as_of` date. It also includes `source_url` (a bankrolled.com page) and a ready-made `cite` line. Unknown queries return `not_in_catalog`; numbers are never invented.
-- Full agent docs: **https://bankrolled.ai/llms.txt**
+**Why not just use the model's memory?** Limits change. The UK FSCS limit rose from £85,000 to £120,000 on 1 Dec 2025. These tools return the current figure with its source, and answer `not_in_catalog` rather than guessing.
 
-This repository holds documentation only. The service runs at https://bankrolled.ai.
+## Quick start
+
+```json
+{ "mcpServers": { "bankrolled": { "url": "https://bankrolled.ai/mcp" } } }
+```
+
+```bash
+curl -s https://bankrolled.ai/mcp -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"money_fact","arguments":{"q":"fdic insurance limit"}}}'
+```
+
+Official MCP Registry: `ai.bankrolled/agent-hub` · Agent docs: https://bankrolled.ai/llms.txt · Canonical magazine: https://bankrolled.com
+
+> `scheme_lookup` accepts ISO codes or names (US/USA, UK/GB, CA, AU, NZ). `pricing_list` is free; it lists everything covered.
 
 ## Tools
 
