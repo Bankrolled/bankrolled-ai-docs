@@ -1,4 +1,4 @@
-# Bankrolled — free, sourced deposit-insurance & savings limits for AI agents
+# Bankrolled — free, sourced deposit-insurance, savings & retirement limits for AI agents
 
 > Free MCP server + REST API. Official regulator source and as-of date on every answer. No API key, no payment, no sign-up.
 
@@ -45,8 +45,20 @@ curl -s https://bankrolled.ai/mcp -H 'content-type: application/json' \
 | us_401k_catch_up_2026 | 401k catch up contribution | US |
 | us_roth_ira_limit_2026 | roth ira contribution limit | US |
 | ca_tfsa_limit_2026 | tfsa contribution limit | CA |
+| us_ira_limit_2026 | ira contribution limit | US |
+| us_401k_super_catch_up_2026 | 401k catch up age 60 to 63 | US |
+| us_hsa_limit_2026 | hsa contribution limit | US |
+| uk_lifetime_isa_limit | lifetime isa limit | UK |
+| uk_junior_isa_limit | junior isa limit | UK |
+| uk_personal_savings_allowance | personal savings allowance | UK |
+| uk_pension_annual_allowance | pension annual allowance | UK |
+| ca_rrsp_limit_2026 | rrsp contribution limit | CA |
+| ca_fhsa_limit | fhsa contribution limit | CA |
+| au_super_concessional_cap | super concessional contributions cap | AU |
+| au_super_non_concessional_cap | super non-concessional contributions cap | AU |
+| nz_kiwisaver_government_contribution | kiwisaver government contribution | NZ |
 
-Live list: GET https://bankrolled.ai/wp-json/bankrolled-ai/v1/supported-queries
+Live list (MCP): call `pricing_list`, or GET https://bankrolled.ai/.well-known/mcp/server-card.json (supported_queries). The REST list at /wp-json/bankrolled-ai/v1/supported-queries covers the first 12 keys only.
 
 scheme_lookup accepts ISO codes and names: US/USA, UK/GB, CA, AU, NZ, "United Kingdom", "Canada" and so on.
 
